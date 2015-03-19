@@ -8,7 +8,7 @@ syntax on
 se tabstop=2
 
 "colorscheme darcula
-color monokai
+"color monokai
 
 
 set shiftwidth=4
