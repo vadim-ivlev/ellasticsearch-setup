@@ -62,7 +62,7 @@ sudo add-apt-repository "deb http://packages.elasticsearch.org/elasticsearch/1.4
 c
 
 #Run apt-get update and the repository is ready for use. You can install it with :
-sudo apt-get update && sudo apt-get install elasticsearch
+sudo apt-get update -y && sudo apt-get -y install elasticsearch
 c
 
 #Configure Elasticsearch to automatically start during bootup :
