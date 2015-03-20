@@ -20,9 +20,9 @@ echo **************************************************************
 
 
 #update repository information
-sudo add-apt-repository -y ppa:webupd8team/java
+add-apt-repository -y ppa:webupd8team/java
 c
-sudo apt-get update -y
+apt-get update -y
 c
 
 #ensure automated install 
@@ -32,7 +32,7 @@ c
 
 
 #install
-sudo apt-get install -y oracle-java7-installer
+apt-get install -y oracle-java7-installer
 c
 
 # show  java version
@@ -42,7 +42,7 @@ tput sgr0
 
 
 # set env variables
-sudo apt-get install -y oracle-java7-set-default
+apt-get install -y oracle-java7-set-default
 c
 
 
@@ -58,19 +58,53 @@ wget -qO - https://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-k
 c
 
 # Add the following to your /etc/apt/sources.list to enable the repository
-sudo add-apt-repository "deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main"
+add-apt-repository "deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main"
 c
 
 #Run apt-get update and the repository is ready for use. You can install it with :
-sudo apt-get update -y && sudo apt-get -y install elasticsearch
+apt-get update -y && sudo apt-get -y install elasticsearch
 c
 
 #Configure Elasticsearch to automatically start during bootup :
-sudo update-rc.d elasticsearch defaults 95 10
+update-rc.d elasticsearch defaults 95 10
 c
 
 # Если надо будет убрать автозапуск, делается это командой:
-# sudo update-rc.d -f elasticsearch remove
+# update-rc.d -f elasticsearch remove
 
 
  
+echo **************************************************************
+echo **************************************************************
+echo SET CLUSTER
+echo **************************************************************
+echo **************************************************************
+
+
+echo "\n###########  SPECIFIC TO PAMYAT NARODA ######################\n" >> /etc/elasticsearch/elasticsearch.yml
+c
+echo 'cluster.name: "PamyatCluster"' >> /etc/elasticsearch/elasticsearch.yml
+c
+#echo 'node.name: "Host_108"' >> /etc/elasticsearch/elasticsearch.yml
+echo "script.disable_dynamic: true" >> /etc/elasticsearch/elasticsearch.yml
+c
+echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
+c
+echo "discovery.zen.minimum_master_nodes: 4" >> /etc/elasticsearch/elasticsearch.yml
+c
+echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
+c
+
+
+
+echo **************************************************************
+echo **************************************************************
+echo CHANGE HEAP ZIZE
+echo **************************************************************
+echo **************************************************************
+
+echo "SETTING HEAP SIZE TO 8g ####################################################"
+sed -i -e 's/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=8g/' /etc/init.d/elasticsearch
+c
+
+
