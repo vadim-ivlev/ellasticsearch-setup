@@ -1,4 +1,4 @@
-# ellasticsearch-setup
+# Add Elasticsearch node to a cluster
 Vagrant file and shell scripts to setup Elasticsearch cluster
 
 You have to have SSH access to the machine(s) to install Elasticsearch.
@@ -14,8 +14,7 @@ If you don't have one(s) follow the steps below to setup a virtul machine on loc
 
 3. Clone this repo and change directory to it: 
 
-        https://github.com/vadim-ivlev/ellasticsearch-setup.git
-		cd ellasticsearch-setup
+        git clone https://github.com/vadim-ivlev/vm-setup.git && cd vm-setup
 
 4. Run Vagrant
 
@@ -25,9 +24,21 @@ If you don't have one(s) follow the steps below to setup a virtul machine on loc
 
 		vagrant ssh
 
+<br><br>
+
 **On the target computer**
 		
+Clone this repo and change directory to it: 
+
+        git clone https://github.com/vadim-ivlev/vm-setup.git && cd vm-setup
 		 
+Open `install-elasticsearch.sh` and check cluster.name and ES_HEAP_SIZE. Run 
+
+        sudo ./install-elasticsearch.sh
+
+Start Elastic
+
+        sudo /etc/init.d/elasticsearch start
 
 
 
