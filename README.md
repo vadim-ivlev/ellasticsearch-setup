@@ -28,13 +28,10 @@ If you don't have one(s) follow the steps below to setup a virtul machine on loc
 
 **On the target computer**
 		
-Clone this repo and change directory to it: 
+From your home directory run: 
 
-        git clone https://github.com/vadim-ivlev/vm-setup.git && cd vm-setup
+        git clone https://github.com/vadim-ivlev/vm-setup.git && cd vm-setup && sudo ./install-elasticsearch.sh
 		 
-Open `install-elasticsearch.sh` and check cluster.name and ES_HEAP_SIZE. Run 
-
-        sudo ./install-elasticsearch.sh
 
 Start Elastic
 

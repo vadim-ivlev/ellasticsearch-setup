@@ -1,25 +1,18 @@
 #!/bin/bash
 
 source functions.sh
-source install-common.sh
-source install-oracle-java7.sh
 
-
-
-HEAP_SIZE="8g"
-CLUSTER_NAME="PamyatCluster"
-NODE_NAME="Host00"
 
 
 
 green "Type Elasticsearch Cluster Name. Should be the same for all nodes."
-read -p "Enter to confirm. [$CLUSTER_NAME]" CLUSTER_NAME
+read -e -p "Enter to confirm." -i "PamyatCluster" CLUSTER_NAME
 
 green "Type Node Name. To identify the nodes."
-read -p "Enter to confirm. [$NODE_NAME]" NODE_NAME
+read -e -p "Enter to confirm." -i "Host00"  NODE_NAME
 
 green "Type Elasticsearch Heap size. Recommended value is 1/2 of RAM. From 256m to 31g."
-read -p "Enter to confirm. [$HEAP_SIZE]" HEAP_SIZE
+read -e -p "Enter to confirm." -i "8g" HEAP_SIZE
 
 
 green "You entered:"
@@ -31,11 +24,18 @@ yellow "Press [ENTER] to continue. Ctrl-C to interrupt"
 read iii
 
 
-green "**************************************************************"
-green "**************************************************************"
+source install-common.sh
+source install-oracle-java7.sh
+
+
+
+
+
+green "##############################################################"
+green "##############################################################"
 green "Install Elasticsearch"
-green "**************************************************************"
-green "**************************************************************"
+green "##############################################################"
+green "##############################################################"
 
 
 # Download and install the Public Signing Key
@@ -58,10 +58,10 @@ c
 # update-rc.d -f elasticsearch remove
 
 
-green "**************************************************************"
+green "##############################################################"
 green " INSTALLING KOPF 1.4.7"
 green " Start elastic and open :  http://localhost:9200/_plugin/kopf/"
-green "**************************************************************"
+green "##############################################################"
 
 /usr/share/elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.4.7
 c
@@ -69,11 +69,11 @@ c
 
 
 
-green "**************************************************************"
-green "**************************************************************"
+green "##############################################################"
+green "##############################################################"
 green "CHANGE HEAP ZIZE to: $HEAP_SIZE"
-green "** replacing ES_HEAP_SIZE in /etc/default/elasticsearch ******"
-green "**************************************************************"
+green "## replacing ES_HEAP_SIZE in /etc/default/elasticsearch ######"
+green "##############################################################"
 
 #sed -i -e 's/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=8g/' /etc/init.d/elasticsearch
 sed -i -e "s/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=$HEAP_SIZE/" /etc/default/elasticsearch
@@ -83,11 +83,11 @@ c
 
 
  
-green "**************************************************************"
-green "**************************************************************"
+green "##############################################################"
+green "##############################################################"
 green "SET CLUSTER"
-green "**************************************************************"
-green "**************************************************************"
+green "##############################################################"
+green "##############################################################"
 
 
 echo -e  "\n###########  SPECIFIC TO PAMYAT NARODA ######################\n" >> /etc/elasticsearch/elasticsearch.yml

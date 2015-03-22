@@ -26,11 +26,11 @@ function yellow(){
 # checks exit code of last command. Lets the user decide what to do next.
 function c() {
 if [ "$?" -ne  "0" ]; then
-  red "\n****************************************************\nATTENTION please:  SOMETHING WENT WRONG HERE  !!!!! \n"
+  red "\n####################################################\nATTENTION please:  SOMETHING WENT WRONG HERE  !!!!! \n"
   red "   ENTER - to continue \n   Ctrl+C -to interrupt"
   read  O
 fi
 }
 
-green "functions.sh loaded"
+#green "functions.sh loaded"
 

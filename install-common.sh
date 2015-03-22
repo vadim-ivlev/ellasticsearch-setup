@@ -3,14 +3,14 @@
 source functions.sh
 
 
-green "update all *********************************************************" 
+green "update all #########################################################" 
 apt-get -y update
 c
 #apt-get -y upgrade
 
 
 
-green "*******************************************************"
+green "#######################################################"
 green "Midnight Commander vim htop pydf avahi"
 
 apt-get -y install mc
@@ -28,7 +28,7 @@ green "copy vim files"
 cp -r home-files/. .
 c
 
-# echo *******************************************************
+# echo #######################################################
 # echo components for wmware shared folders
 # 
 # apt-get -y install gcc
