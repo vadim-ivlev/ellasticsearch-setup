@@ -96,13 +96,13 @@ echo -e "cluster.name: \"$CLUSTER_NAME\"" >> /etc/elasticsearch/elasticsearch.ym
 c
 echo "node.name: \"$NODE_NAME\"" >> /etc/elasticsearch/elasticsearch.yml
 c
-echo "script.disable_dynamic: true" >> /etc/elasticsearch/elasticsearch.yml
+#echo "script.disable_dynamic: true" >> /etc/elasticsearch/elasticsearch.yml
 c
-echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
+#echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
 c
-echo "discovery.zen.minimum_master_nodes: 4" >> /etc/elasticsearch/elasticsearch.yml
+#echo "discovery.zen.minimum_master_nodes: 4" >> /etc/elasticsearch/elasticsearch.yml
 c
-echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
+#echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
 c
 
 
