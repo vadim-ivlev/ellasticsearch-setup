@@ -105,6 +105,8 @@ c
 #echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
 c
 
+/etc/init.d/elasticsearch start
+c
 
 
 
