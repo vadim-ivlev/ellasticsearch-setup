@@ -25,7 +25,7 @@ apt-get -y install avahi-daemon
 c
 
 green "copy vim files"
-cp -r home-files/. .
+cp -r home-files/. ~
 c
 
 # echo #######################################################
