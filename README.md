@@ -12,15 +12,11 @@ If you don't have one(s) follow the steps below to setup a virtul machine on loc
 2. Setup Virtual Box 
 [https://www.virtualbox.org/](https://www.virtualbox.org/ "https://www.virtualbox.org/")
 
-3. Clone this repo and change directory to it: 
+3. Clone this repo into some dir (for example V21), change directory to it and run vagrant up: 
 
-        git clone https://github.com/vadim-ivlev/vm-setup.git && cd vm-setup
+        git clone https://github.com/vadim-ivlev/vm-setup.git V21 && cd !$ && vagrant up
 
-4. Run Vagrant
-
-		vagrant up
-
-5. open SHH to the machine
+4. open SHH to the machine
 
 		vagrant ssh
 
