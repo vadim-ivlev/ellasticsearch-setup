@@ -19,10 +19,10 @@ apt-get -y install vim
 c
 apt-get -y install htop
 c
-apt-get -y install pydf
-c
-apt-get -y install avahi-daemon
-c
+#apt-get -y install pydf
+#c
+#apt-get -y install avahi-daemon
+#c
 
 green "copy vim files"
 cp -r home-files/. ~/.
