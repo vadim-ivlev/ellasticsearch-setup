@@ -1,56 +1,41 @@
 #!/bin/bash
 
-# checks exit code of last command. Lets the user decide what to do next.
-function c() {
-if [ "$?" -ne  "0" ]; then
-  tput setaf 1
-  echo -e "\n****************************************************\nATTENTION please:  SOMETHING WENT WRONG HERE  !!!!! \n"
-  echo -e "  ENTER - to continue \n  Ctrl+C -to interrupt"
-  tput sgr0 
-  read  O
-fi
-}
-
-
-echo **************************************************************
-echo **************************************************************
-echo Install Oracle Java 7
-echo **************************************************************
-echo **************************************************************
-
-
-#update repository information
-add-apt-repository -y ppa:webupd8team/java
-c
-apt-get update -y
-c
-
-#ensure automated install 
-echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-c
+source functions.sh
+source install-common.sh
+source install-oracle-java7.sh
 
 
 
-#install
-apt-get install -y oracle-java7-installer
-c
-
-# show  java version
-tput setaf 1
-java -version
-tput sgr0
+HEAP_SIZE="8g"
+CLUSTER_NAME="PamyatCluster"
+NODE_NAME="Host00"
 
 
-# set env variables
-apt-get install -y oracle-java7-set-default
-c
+
+green "Type Elasticsearch Cluster Name. Should be the same for all nodes."
+read -p "Enter to confirm. [$CLUSTER_NAME]" CLUSTER_NAME
+
+green "Type Node Name. To identify the nodes."
+read -p "Enter to confirm. [$NODE_NAME]" NODE_NAME
+
+green "Type Elasticsearch Heap size. Recommended value is 1/2 of RAM. From 256m to 31g."
+read -p "Enter to confirm. [$HEAP_SIZE]" HEAP_SIZE
 
 
-echo **************************************************************
-echo **************************************************************
-echo Install Elasticsearch
-echo **************************************************************
-echo **************************************************************
+green "You entered:"
+green "Cluster Name: $CLUSTER_NAME"
+green "Node: $NODE_NAME"
+green "Heap size: $HEAP_SIZE"
+
+yellow "Press [ENTER] to continue. Ctrl-C to interrupt"
+read iii
+
+
+green "**************************************************************"
+green "**************************************************************"
+green "Install Elasticsearch"
+green "**************************************************************"
+green "**************************************************************"
 
 
 # Download and install the Public Signing Key
@@ -73,19 +58,44 @@ c
 # update-rc.d -f elasticsearch remove
 
 
+green "**************************************************************"
+green " INSTALLING KOPF 1.4.7"
+green " Start elastic and open :  http://localhost:9200/_plugin/kopf/"
+green "**************************************************************"
+
+/usr/share/elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.4.7
+c
+
+
+
+
+green "**************************************************************"
+green "**************************************************************"
+green "CHANGE HEAP ZIZE to: $HEAP_SIZE"
+green "** replacing ES_HEAP_SIZE in /etc/default/elasticsearch ******"
+green "**************************************************************"
+
+#sed -i -e 's/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=8g/' /etc/init.d/elasticsearch
+sed -i -e "s/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=$HEAP_SIZE/" /etc/default/elasticsearch
+c
+
+
+
+
  
-echo **************************************************************
-echo **************************************************************
-echo SET CLUSTER
-echo **************************************************************
-echo **************************************************************
+green "**************************************************************"
+green "**************************************************************"
+green "SET CLUSTER"
+green "**************************************************************"
+green "**************************************************************"
 
 
-echo "\n###########  SPECIFIC TO PAMYAT NARODA ######################\n" >> /etc/elasticsearch/elasticsearch.yml
+echo -e  "\n###########  SPECIFIC TO PAMYAT NARODA ######################\n" >> /etc/elasticsearch/elasticsearch.yml
 c
-echo 'cluster.name: "PamyatCluster"' >> /etc/elasticsearch/elasticsearch.yml
+echo -e "cluster.name: \"$CLUSTER_NAME\"" >> /etc/elasticsearch/elasticsearch.yml
 c
-#echo 'node.name: "Host_108"' >> /etc/elasticsearch/elasticsearch.yml
+echo "node.name: \"$NODE_NAME\"" >> /etc/elasticsearch/elasticsearch.yml
+c
 echo "script.disable_dynamic: true" >> /etc/elasticsearch/elasticsearch.yml
 c
 echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
@@ -96,15 +106,5 @@ echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
 c
 
 
-
-echo **************************************************************
-echo **************************************************************
-echo CHANGE HEAP ZIZE
-echo **************************************************************
-echo **************************************************************
-
-echo "SETTING HEAP SIZE TO 8g ####################################################"
-sed -i -e 's/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=8g/' /etc/init.d/elasticsearch
-c
 
 

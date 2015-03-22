@@ -11,7 +11,7 @@ se tabstop=2
 "color monokai
 
 
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 
 set smarttab
@@ -31,7 +31,7 @@ set directory=~/.vim/swap//
 
 set autowrite
 
-set foldmethod=indent
+set foldmethod=manual
 "map <F5> :w \|!cake rebuild<CR>
 "imap <F5> <ESC>:w \|!cake rebuild<CR>
 

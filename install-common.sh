@@ -1,25 +1,17 @@
 #!/bin/bash
 
-# checks exit code of last command. Lets the user decide what to do next.
-function c() {
-if [ "$?" -ne  "0" ]; then
-  tput setaf 1
-  echo -e "\n****************************************************\nATTENTION please:  SOMETHING WENT WRONG HERE  !!!!! \n"
-  echo -e "  ENTER - to continue \n  Ctrl+C -to interrupt"
-  tput sgr0 
-  read  O
-fi
-}
+source functions.sh
 
-echo update all 
+
+green "update all *********************************************************" 
 apt-get -y update
 c
 #apt-get -y upgrade
 
 
 
-echo *******************************************************
-echo Midnight Commander vim htop pydf avahi
+green "*******************************************************"
+green "Midnight Commander vim htop pydf avahi"
 
 apt-get -y install mc
 c
@@ -32,6 +24,9 @@ c
 apt-get -y install avahi-daemon
 c
 
+green "copy vim files"
+cp -r home-files/. .
+c
 
 # echo *******************************************************
 # echo components for wmware shared folders
