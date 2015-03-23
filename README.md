@@ -13,12 +13,14 @@ You can see Status, Start and Stop Elastic by
         sudo /etc/init.d/elasticsearch start
         sudo /etc/init.d/elasticsearch stop
 
+<br><br>
 
 ---------------------------
 
 
+### Setting up a virtual machine
 
-If you don't have a virtual machine to experiment follow steps below to setup a virtul machine your local computer
+If you don't have a virtual machine  follow steps below to setup a virtul machine your local computer
 
 1. Setup Vagrant 
 [https://www.vagrantup.com/](https://www.vagrantup.com/ "https://www.vagrantup.com/")
@@ -30,7 +32,7 @@ If you don't have a virtual machine to experiment follow steps below to setup a 
 
         git clone https://github.com/vadim-ivlev/vm-setup.git V21 && cd V21 && vagrant up
 
-4. open SHH to the machine
+4. Open SHH session to the machine
 
 		vagrant ssh
 
