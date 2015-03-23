@@ -1,10 +1,24 @@
 # Add Elasticsearch node to a cluster
-Vagrant file and shell scripts to setup Elasticsearch cluster
+shell scripts to setup Elasticsearch cluster
 
-You have to have SSH access to the machine(s) to install Elasticsearch.
+## Install 		
+Open SHH to your target machine. In your home directory run: 
+
+        git clone https://github.com/vadim-ivlev/vm-setup.git && cd vm-setup && sudo ./install-elasticsearch.sh
+		 
+## Check
+You can see Status, Start and Stop Elastic by
+
+        sudo /etc/init.d/elasticsearch status
+        sudo /etc/init.d/elasticsearch start
+        sudo /etc/init.d/elasticsearch stop
 
 
-If you don't have one(s) follow the steps below to setup a virtul machine on local computer
+---------------------------
+
+
+
+If you don't have a virtual machine to experiment follow steps below to setup a virtul machine your local computer
 
 1. Setup Vagrant 
 [https://www.vagrantup.com/](https://www.vagrantup.com/ "https://www.vagrantup.com/")
@@ -12,7 +26,7 @@ If you don't have one(s) follow the steps below to setup a virtul machine on loc
 2. Setup Virtual Box 
 [https://www.virtualbox.org/](https://www.virtualbox.org/ "https://www.virtualbox.org/")
 
-3. Clone this repo into some dir (for example V21), change directory to it and run vagrant up: 
+3. Run the following command to clone this repo into some dir (for example V21) and setup a virtual machine in it: 
 
         git clone https://github.com/vadim-ivlev/vm-setup.git V21 && cd V21 && vagrant up
 
@@ -20,18 +34,8 @@ If you don't have one(s) follow the steps below to setup a virtul machine on loc
 
 		vagrant ssh
 
-<br><br>
 
-**On the target computer**
-		
-From your home directory run: 
 
-        git clone https://github.com/vadim-ivlev/vm-setup.git && cd vm-setup && sudo ./install-elasticsearch.sh
-		 
-
-Start Elastic
-
-        sudo /etc/init.d/elasticsearch start
 
 
 
