@@ -9,7 +9,7 @@ green "Type Elasticsearch Cluster Name. Should be the same for all nodes."
 read -e -p "Enter to confirm." -i "PamyatCluster" CLUSTER_NAME
 
 green "Type Node Name. To identify the nodes."
-read -e -p "Enter to confirm." -i "Host00"  NODE_NAME
+read -e -p "Enter to confirm." -i "Nauka cls1"  NODE_NAME
 
 green "Type Elasticsearch Heap size. Recommended value is 1/2 of RAM. From 256m to 31g."
 read -e -p "Enter to confirm." -i "8g" HEAP_SIZE
@@ -96,13 +96,13 @@ echo -e "cluster.name: \"$CLUSTER_NAME\"" >> /etc/elasticsearch/elasticsearch.ym
 c
 echo "node.name: \"$NODE_NAME\"" >> /etc/elasticsearch/elasticsearch.yml
 c
-#echo "script.disable_dynamic: true" >> /etc/elasticsearch/elasticsearch.yml
+echo "script.disable_dynamic: true" >> /etc/elasticsearch/elasticsearch.yml
 c
-#echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
+echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
 c
-#echo "discovery.zen.minimum_master_nodes: 4" >> /etc/elasticsearch/elasticsearch.yml
+echo "discovery.zen.minimum_master_nodes: 3" >> /etc/elasticsearch/elasticsearch.yml
 c
-#echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
+echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
 c
 
 /etc/init.d/elasticsearch start
