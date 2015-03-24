@@ -6,7 +6,7 @@ source functions.sh
 
 
 green "Type Elasticsearch Cluster Name. Should be the same for all nodes."
-read -e -p "Enter to confirm." -i "PamyatCluster" CLUSTER_NAME
+read -e -p "Enter to confirm." -i "PamyatCluster1" CLUSTER_NAME
 
 green "Type Node Name. To identify the nodes."
 read -e -p "Enter to confirm." -i "Nauka cls1"  NODE_NAME
@@ -104,6 +104,12 @@ echo "discovery.zen.minimum_master_nodes: 3" >> /etc/elasticsearch/elasticsearch
 c
 echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
 c
+
+echo "discovery.zen.ping.multicast.enabled: false" >> /etc/elasticsearch/elasticsearch.yml
+c
+echo "discovery.zen.ping.unicast.hosts: [\"85.91.99.25\", \"85.91.99.26\", \"85.91.99.27\", \"85.91.99.28\", \"85.91.99.29\", \"84.47.174.76\"]" >> /etc/elasticsearch/elasticsearch.yml
+c
+
 
 /etc/init.d/elasticsearch start
 c
