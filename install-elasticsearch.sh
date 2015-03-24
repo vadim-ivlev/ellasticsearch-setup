@@ -107,7 +107,7 @@ c
 
 echo "discovery.zen.ping.multicast.enabled: false" >> /etc/elasticsearch/elasticsearch.yml
 c
-echo "discovery.zen.ping.unicast.hosts: [\"85.91.99.25\", \"85.91.99.26\", \"85.91.99.27\", \"85.91.99.28\", \"85.91.99.29\", \"84.47.174.76\"]" >> /etc/elasticsearch/elasticsearch.yml
+echo "discovery.zen.ping.unicast.hosts: [\"85.91.99.22\", \"85.91.99.25\", \"85.91.99.26\", \"85.91.99.27\", \"85.91.99.28\", \"85.91.99.29\", \"84.47.174.76\"]" >> /etc/elasticsearch/elasticsearch.yml
 c
 
 
