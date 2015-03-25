@@ -14,17 +14,17 @@ read -e -p "Enter to confirm: " -i "NODE-00"  NODE_NAME
 green "Type Elasticsearch Heap size. Recommended value is 1/2 of RAM. From 256m to 31g."
 read -e -p "Enter to confirm: " -i "512m" HEAP_SIZE
 
-green "Type minimum master nodes. Recommended value =  1/2 * (num of nodes) + 1"
+green "Type minimum master nodes. Recommended value =  1/2 x (num of nodes) + 1"
 read -e -p "Enter to confirm: " -i "1" MININUM_MASTER_NODES
 
 
-green "You entered:"
-green "Cluster Name: $CLUSTER_NAME"
-green "Node: $NODE_NAME"
-green "Heap size: $HEAP_SIZE"
+green "\nYou entered:\n"
+green "Cluster Name:         $CLUSTER_NAME"
+green "Node:                 $NODE_NAME"
+green "Heap size:            $HEAP_SIZE"
 green "Minimum master nodes: $MININUM_MASTER_NODES"
 
-yellow "Press [ENTER] to continue. Ctrl-C to interrupt"
+yellow "\nPress [ENTER] to continue. Ctrl-C to interrupt"
 read iii
 
 
