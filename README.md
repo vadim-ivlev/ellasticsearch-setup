@@ -4,7 +4,7 @@ shell scripts to setup Elasticsearch cluster
 ## Install 		
 Open SHH to your target machine. In your home directory run: 
 
-        git clone https://github.com/vadim-ivlev/vm-setup.git && cd vm-setup && sudo ./install-elasticsearch.sh
+        git clone https://github.com/vadim-ivlev/vm-setup.git && cd vm-setup && sudo ./install-elasticsearch-1.5.sh
 		 
 ## Check
 You can see Status, Start and Stop Elastic by
