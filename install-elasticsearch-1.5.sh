@@ -6,16 +6,16 @@ source functions.sh
 
 
 green "Type Elasticsearch Cluster Name. Should be the same for all nodes."
-read -e -p "Enter to confirm." -i "CLUSTER-0" CLUSTER_NAME
+read -e -p "Enter to confirm: " -i "CLUSTER-0" CLUSTER_NAME
 
 green "Type Node Name. To identify the nodes."
-read -e -p "Enter to confirm." -i "NODE-00"  NODE_NAME
+read -e -p "Enter to confirm: " -i "NODE-00"  NODE_NAME
 
 green "Type Elasticsearch Heap size. Recommended value is 1/2 of RAM. From 256m to 31g."
-read -e -p "Enter to confirm." -i "512m" HEAP_SIZE
+read -e -p "Enter to confirm: " -i "512m" HEAP_SIZE
 
 green "Type minimum master nodes. Recommended value =  1/2 * (num of nodes) + 1"
-read -e -p "Enter to confirm." -i "1" MININUM_MASTER_NODES
+read -e -p "Enter to confirm: " -i "1" MININUM_MASTER_NODES
 
 
 green "You entered:"
