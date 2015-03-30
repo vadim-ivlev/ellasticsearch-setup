@@ -30,6 +30,14 @@ c
 chown -R vagrant:vagrant ~/.*
 с
 
+green "installing Node.js v0.12"
+# Note the new setup script name for Node.js v0.12
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+c
+# Then install with:
+sudo apt-get install -y nodejs
+c
+
 # echo #######################################################
 # echo components for wmware shared folders
 # 
