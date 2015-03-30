@@ -27,6 +27,8 @@ c
 green "copy vim files"
 cp -r home-files/. ~/.
 c
+chown -R vagrant:vagrant ~/.*
+с
 
 # echo #######################################################
 # echo components for wmware shared folders
