@@ -7,8 +7,8 @@ se nu
 syntax on
 se tabstop=2
 
-"colorscheme darcula
-"color monokai
+color darcula
+"color evening
 
 
 set shiftwidth=2
@@ -29,9 +29,19 @@ filetype plugin indent on
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
+"set autowriteall=on
 set autowrite
 
-set foldmethod=manual
-"map <F5> :w \|!cake rebuild<CR>
-"imap <F5> <ESC>:w \|!cake rebuild<CR>
 
+"map <F5> :w \|!cake rebuild<CR> 
+""imap <F5> <ESC>:w \|!cake rebuild<CR>
+
+"switching buffers
+nmap <C-N> :bn<CR>
+nmap <C-P> :bp<CR>i
+
+" folding
+set foldmethod=manual
+set foldmethod=manual
+autocmd BufWinLeave *.* mkview!
+autocmd BufWinEnter *.* silent loadview

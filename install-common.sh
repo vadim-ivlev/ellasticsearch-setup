@@ -11,7 +11,7 @@ c
 
 
 green "#######################################################"
-green "Midnight Commander vim htop pydf avahi"
+green "Midnight Commander vim htop ctags pydf avahi"
 
 apt-get -y install mc
 c
@@ -19,6 +19,9 @@ apt-get -y install vim
 c
 apt-get -y install htop
 c
+apt-get install exuberant-ctags
+c
+
 #apt-get -y install pydf
 #c
 #apt-get -y install avahi-daemon
@@ -37,6 +40,7 @@ c
 # Then install with:
 sudo apt-get install -y nodejs
 c
+
 
 # echo #######################################################
 # echo components for wmware shared folders
