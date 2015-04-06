@@ -41,6 +41,9 @@ c
 sudo apt-get install -y nodejs
 c
 
+npm install -g coffee-script
+c
+
 
 # echo #######################################################
 # echo components for wmware shared folders
