@@ -41,10 +41,23 @@ c
 
 
 green "copy vim files"
-cp -r home-files/. ~/.
+cp -rf home-files/. ~/.
 c
 chown -R vagrant:vagrant ~/.*
 с
+
+green "cloning vim plugins"
+git clone https://github.com/kchmck/vim-coffee-script.git ~/.vim/bundle/vim-coffee-script/
+c
+git clone git://github.com/digitaltoad/vim-jade.git ~/.vim/bundle/vim-jade/
+c
+git clone https://github.com/groenewege/vim-less ~/.vim/bundle/vim-less/
+c
+git clone git://github.com/wavded/vim-stylus.git ~/.vim/bundle/vim-stylus/
+c
+git clone git://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular/
+c
+
 
 
 # echo #######################################################
