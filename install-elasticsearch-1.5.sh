@@ -102,6 +102,8 @@ echo "discovery.zen.minimum_master_nodes: $MININUM_MASTER_NODES" >> /etc/elastic
 c
 echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
 c
+echo "http.cors.enabled: true" >> /etc/elasticsearch/elasticsearch.yml
+c
 
 #network.publish_host:  "55.55.55.55"
 #c

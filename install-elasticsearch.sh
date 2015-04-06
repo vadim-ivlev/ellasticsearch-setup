@@ -105,6 +105,11 @@ c
 echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
 c
 
+
+echo "http.cors.enabled: true " >> /etc/elasticsearch/elasticsearch.yml
+c
+
+
 echo "discovery.zen.ping.multicast.enabled: false" >> /etc/elasticsearch/elasticsearch.yml
 c
 echo 'discovery.zen.ping.unicast.hosts: ["ip1", "ip2"]' >> /etc/elasticsearch/elasticsearch.yml
