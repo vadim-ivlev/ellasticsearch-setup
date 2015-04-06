@@ -27,12 +27,6 @@ c
 #apt-get -y install avahi-daemon
 #c
 
-green "copy vim files"
-cp -r home-files/. ~/.
-c
-chown -R vagrant:vagrant ~/.*
-с
-
 green "installing Node.js v0.12"
 # Note the new setup script name for Node.js v0.12
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
@@ -43,6 +37,14 @@ c
 
 npm install -g coffee-script
 c
+
+
+
+green "copy vim files"
+cp -r home-files/. ~/.
+c
+chown -R vagrant:vagrant ~/.*
+с
 
 
 # echo #######################################################
