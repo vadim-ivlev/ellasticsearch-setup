@@ -29,6 +29,10 @@ read iii
 
 
 source install-common.sh
+
+# uninstall java 7
+sudo apt-get remove -y oracle-java7-installer
+c
 source install-oracle-java8.sh
 
 
@@ -100,8 +104,8 @@ echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
 c
 echo "discovery.zen.minimum_master_nodes: $MININUM_MASTER_NODES" >> /etc/elasticsearch/elasticsearch.yml
 c
-echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
-c
+#echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
+#c
 echo "http.cors.enabled: true" >> /etc/elasticsearch/elasticsearch.yml
 c
 
