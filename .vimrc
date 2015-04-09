@@ -7,6 +7,7 @@ se nu
 syntax on
 se tabstop=2
 
+colorscheme blue
 "colorscheme darcula
 "color monokai
 
