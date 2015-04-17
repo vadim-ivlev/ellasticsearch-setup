@@ -43,7 +43,7 @@ c
 green "copy vim files"
 cp -rf home-files/. ~/.
 c
-chown -R test_user:test_user ~/.*
+chown -R vagrant:vagrant ~/.*
 с
 
 green "cloning vim plugins"
