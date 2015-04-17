@@ -70,7 +70,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
      sudo apt-get update
      sudo apt-get install -y git
-     git clone 
+     git clone https://github.com/vadim-ivlev/vm-setup.git
+     cd vm-setup
+     sudo ./install-common.sh
   SHELL
 
   # config.vm.provision :shell, path: "bootstrap.sh"  
