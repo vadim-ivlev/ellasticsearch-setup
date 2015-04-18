@@ -10,8 +10,11 @@ source functions.sh
 # 
 # 1. Copy the installdir/ctlscript.sh file to /etc/init.d . It is advisable to rename this script to something more specific, like “bitnami-dreamfactory”.
 
-#sudo cp ${installdir}/ctlscript.sh /etc/init.d/bitnami-dreamfactory
-#c
+sudo cp bitnami-dreamfactory /etc/init.d/bitnami-dreamfactory
+c
+sudo cat /opt/dreamfactory-1.9.1-1/ctlscript.sh >> /etc/init.d/bitnami-dreamfactory
+c
+
 
  
 # 2. Now add the following lines at the beginning of your bitnami-dreamfactory script, modifying them if you need it.
