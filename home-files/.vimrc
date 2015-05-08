@@ -7,7 +7,8 @@ se nu
 syntax on
 se tabstop=2
 
-color darcula
+color blue
+"color darcula
 "color evening
 
 
