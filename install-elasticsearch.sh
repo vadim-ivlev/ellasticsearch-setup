@@ -59,11 +59,15 @@ c
 
 
 green "##############################################################"
-green " INSTALLING KOPF 1.4.7"
+green " INSTALLING KOPF 1.4.7, Marvell "
 green " Start elastic and open :  http://localhost:9200/_plugin/kopf/"
+green " Start elastic and open :  http://localhost:9200/_plugin/marvel/"
 green "##############################################################"
 
 /usr/share/elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.4.7
+c
+
+/usr/share/elasticsearch/bin/plugin --install elasticsearch/marvel/latest
 c
 
 
@@ -116,8 +120,8 @@ echo 'discovery.zen.ping.unicast.hosts: ["ip1", "ip2"]' >> /etc/elasticsearch/el
 c
 
 
-/etc/init.d/elasticsearch start
-c
+#/etc/init.d/elasticsearch start
+#c
 
 
 
