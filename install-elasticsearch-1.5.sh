@@ -63,14 +63,19 @@ c
 # update-rc.d -f elasticsearch remove
 
 
+
 green "##############################################################"
-green " INSTALLING KOPF 1.4.7"
+green " INSTALLING KOPF 1.4.7, Marvell "
 green " Start elastic and open :  http://localhost:9200/_plugin/kopf/"
+green " Start elastic and open :  http://localhost:9200/_plugin/marvel/"
 green "##############################################################"
 
-/usr/share/elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.4.7
+#/usr/share/elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.4.7
+/usr/share/elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf
 c
 
+/usr/share/elasticsearch/bin/plugin --install elasticsearch/marvel/latest
+c
 
 
 
