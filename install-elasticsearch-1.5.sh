@@ -74,12 +74,6 @@ c
 
 
 
-green "CHANGE HEAP ZIZE to: $HEAP_SIZE ##############################"
-green "## replacing ES_HEAP_SIZE in /etc/default/elasticsearch ######"
-
-#sed -i -e 's/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=8g/' /etc/init.d/elasticsearch
-sed -i -e "s/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=$HEAP_SIZE/" /etc/default/elasticsearch
-c
 
 
 
@@ -92,22 +86,31 @@ green "##############################################################"
 green "##############################################################"
 
 
-echo -e  "\n###########  SPECIFIC TO $CLUSTER_NAME  ######################\n" >> /etc/elasticsearch/elasticsearch.yml
+green "CHANGE HEAP ZIZE to: $HEAP_SIZE ##############################"
+green "## replacing ES_HEAP_SIZE in /etc/default/elasticsearch ######"
+
+#sed -i -e 's/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=8g/' /etc/init.d/elasticsearch
+sed -i -e "s/.*ES_HEAP_SIZE=.*/ES_HEAP_SIZE=$HEAP_SIZE/" /etc/default/elasticsearch
 c
-echo -e "cluster.name: \"$CLUSTER_NAME\"" >> /etc/elasticsearch/elasticsearch.yml
-c
-echo "node.name: \"$NODE_NAME\"" >> /etc/elasticsearch/elasticsearch.yml
-c
-echo "script.disable_dynamic: true" >> /etc/elasticsearch/elasticsearch.yml
-c
-echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
-c
-echo "discovery.zen.minimum_master_nodes: $MININUM_MASTER_NODES" >> /etc/elasticsearch/elasticsearch.yml
-c
-#echo "discovery.zen.ping.timeout: 15s" >> /etc/elasticsearch/elasticsearch.yml
+
+
+
+
+#echo -e  "\n###########  SPECIFIC TO $CLUSTER_NAME  ######################\n" >> /etc/elasticsearch/elasticsearch.yml
 #c
-echo "http.cors.enabled: true" >> /etc/elasticsearch/elasticsearch.yml
-c
+#echo -e "cluster.name: \"$CLUSTER_NAME\"" >> /etc/elasticsearch/elasticsearch.yml
+#c
+#echo "node.name: \"$NODE_NAME\"" >> /etc/elasticsearch/elasticsearch.yml
+#c
+#echo "script.disable_dynamic: true" >> /etc/elasticsearch/elasticsearch.yml
+#c
+#echo "bootstrap.mlockall: true" >> /etc/elasticsearch/elasticsearch.yml
+#c
+#echo "discovery.zen.minimum_master_nodes: $MININUM_MASTER_NODES" >> /etc/elasticsearch/elasticsearch.yml
+#c
+#echo "http.cors.enabled: true" >> /etc/elasticsearch/elasticsearch.yml
+#c
+
 
 #network.publish_host:  "55.55.55.55"
 #c
@@ -117,8 +120,8 @@ c
 #c
 
 
-/etc/init.d/elasticsearch start
-c
+#/etc/init.d/elasticsearch start
+#c
 
 
 
