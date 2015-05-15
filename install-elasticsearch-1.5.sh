@@ -28,7 +28,7 @@ yellow "\nPress [ENTER] to continue. Ctrl-C to interrupt"
 read iii
 
 
-source install-common.sh
+#source install-common.sh
 
 # uninstall java 7
 sudo apt-get remove -y oracle-java7-installer
