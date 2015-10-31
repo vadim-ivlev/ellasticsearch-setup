@@ -2,6 +2,8 @@
 
 source functions.sh
 
+green "ENTER YOUR USER NAME"
+read -e -p "Enter to confirm." -i "vagrant" USER_NAME
 
 green "update all #########################################################" 
 apt-get -y update
@@ -46,7 +48,7 @@ c
 green "copy vim files"
 cp -rf home-files/. ~/.
 c
-chown -R vagrant:vagrant ~/.*
+chown -R $USER_NAME:$USER_NAME ~/.*
 с
 
 green "cloning vim plugins"
