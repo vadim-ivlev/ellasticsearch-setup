@@ -27,10 +27,13 @@ c
 #apt-get -y install avahi-daemon
 #c
 
-green "installing Node.js v0.12"
+green "installing Node.js"
 # Note the new setup script name for Node.js v0.12
-curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+#curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 c
+
+
 # Then install with:
 sudo apt-get install -y nodejs
 c
