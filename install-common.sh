@@ -46,7 +46,7 @@ c
 green "copy vim files"
 cp -rf home-files/. ~/.
 c
-chown -R $USER:$USER ~/.*
+chown -R vagrant:vagrant ~/.*
 с
 
 green "cloning vim plugins"
@@ -67,7 +67,7 @@ c
 
 
 green "installing build -essential"
-sudo apt-get install build-essential checkinstall
+apt-get install -y build-essential checkinstall
 c
 
 # echo #######################################################
