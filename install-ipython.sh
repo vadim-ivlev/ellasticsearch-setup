@@ -9,7 +9,7 @@ c
 
 
 green "installing IPYTHON"
-bash Anaconda-2.3.0-Linux-x86_64.sh
+bash Anaconda-2.3.0-Linux-x86_64.sh -b
 c
 
 
