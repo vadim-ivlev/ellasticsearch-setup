@@ -1,0 +1,17 @@
+/*
+Placeholder for custom user CSS
+
+mainly to be overridden in profile/static/custom/custom.css
+
+This will always be an empty file in IPython
+*/
+
+.list_container > div {
+    border-bottom: 1px solid white;
+    font-size: 130%;
+}
+/*
+.list_container {
+    border: 0px solid #dddddd;
+}
+*/

@@ -43,7 +43,7 @@ c
 green "copy vim files"
 cp -rf home-files/. ~/.
 c
-chown -R test_user:test_user ~/.*
+chown -R $USER:$USER ~/.*
 с
 
 green "cloning vim plugins"
@@ -57,8 +57,15 @@ git clone git://github.com/wavded/vim-stylus.git ~/.vim/bundle/vim-stylus/
 c
 git clone git://github.com/godlygeek/tabular.git ~/.vim/bundle/tabular/
 c
+git clone git://github.com/jpalardy/vim-slime.git ~/.vim/bundle/vim-slime/
+c
+git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs/
+c
 
 
+green "installing build -essential"
+sudo apt-get install build-essential checkinstall
+c
 
 # echo #######################################################
 # echo components for wmware shared folders
@@ -67,4 +74,3 @@ c
 # apt-get -y install binutils
 # apt-get -y install make
 # apt-get -y install linux-source-3.13.0
-
