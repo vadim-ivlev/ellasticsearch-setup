@@ -44,6 +44,11 @@ npm install -g coffee-script
 c
 
 
+npm install -g http-server
+c
+
+
+
 
 green "copy vim files"
 cp -rf home-files/. ~/.
