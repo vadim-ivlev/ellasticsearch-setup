@@ -26,3 +26,7 @@ green "allowing access from other IPs to notebook server"
 "c.NotebookApp.ip = '*'" >> ~/.jupyter/jupyter_notebook_config.py
 c
 
+
+green "install CoffeScript for magic"
+pip install CoffeeScript
+c
