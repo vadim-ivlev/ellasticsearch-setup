@@ -8,8 +8,8 @@ read -e -p "Press Enter to confirm: " -i "vagrant" USER_NAME
 green "update all #########################################################" 
 apt-get -y update
 c
-#apt-get -y upgrade
-
+apt-get -y upgrade
+c
 
 
 green "#######################################################"
