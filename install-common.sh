@@ -48,8 +48,6 @@ npm install -g http-server
 c
 
 
-
-
 green "copy vim files"
 cp -rf home-files/. ~/.
 c
@@ -86,3 +84,7 @@ c
 
 chown -R $USER_NAME:$USER_NAME ~/.*
 с
+
+source install-oracle-java8.sh
+source install-ipython.sh
+

@@ -14,9 +14,9 @@ c
 
 export PATH="/home/vagrant/anaconda/bin:$PATH"
 c
-echo "# added by MY installer"> ~/.bashrc
+echo "# added by MY installer">> ~/.bashrc
 c
-echo 'export PATH="/home/vagrant/anaconda/bin:$PATH"'> ~/.bashrc
+echo 'export PATH="/home/vagrant/anaconda/bin:$PATH"'>> ~/.bashrc
 c
 
 green "install CoffeScript for magic"
