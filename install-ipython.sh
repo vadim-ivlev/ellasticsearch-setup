@@ -12,6 +12,17 @@ green "installing IPYTHON"
 bash Anaconda-2.3.0-Linux-x86_64.sh -b
 c
 
+export PATH="/home/vagrant/anaconda/bin:$PATH"
+c
+echo "# added by MY installer"> ~/.bashrc
+c
+echo 'export PATH="/home/vagrant/anaconda/bin:$PATH"'> ~/.bashrc
+c
+
+green "install CoffeScript for magic"
+pip install CoffeeScript
+c
+
 
 green "installing JUPYTER"
 conda install jupyter
@@ -27,6 +38,3 @@ green "allowing access from other IPs to notebook server"
 c
 
 
-green "install CoffeScript for magic"
-pip install CoffeeScript
-c

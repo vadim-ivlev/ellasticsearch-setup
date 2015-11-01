@@ -3,7 +3,7 @@
 source functions.sh
 
 green "ENTER YOUR USER NAME"
-read -e -p "Enter to confirm." -i "vagrant" USER_NAME
+read -e -p "Press Enter to confirm: " -i "vagrant" USER_NAME
 
 green "update all #########################################################" 
 apt-get -y update
@@ -53,8 +53,6 @@ c
 green "copy vim files"
 cp -rf home-files/. ~/.
 c
-chown -R $USER_NAME:$USER_NAME ~/.*
-с
 
 green "cloning vim plugins"
 git clone https://github.com/kchmck/vim-coffee-script.git ~/.vim/bundle/vim-coffee-script/
@@ -84,3 +82,7 @@ c
 # apt-get -y install binutils
 # apt-get -y install make
 # apt-get -y install linux-source-3.13.0
+
+
+chown -R $USER_NAME:$USER_NAME ~/.*
+с
