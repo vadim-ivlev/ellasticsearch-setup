@@ -34,7 +34,7 @@ c
 
 
 green "allowing access from other IPs to notebook server"
-"c.NotebookApp.ip = '*'" >> ~/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.ip = '*'" >> ~/.jupyter/jupyter_notebook_config.py
 c
 
 
