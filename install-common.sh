@@ -82,9 +82,9 @@ c
 # apt-get -y install linux-source-3.13.0
 
 
-chown -R $USER_NAME:$USER_NAME ~/.*
-с
 
 source install-oracle-java8.sh
 source install-ipython.sh
 
+chown -R $USER_NAME:$USER_NAME ~/.*
+с
