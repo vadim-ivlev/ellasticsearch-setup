@@ -8,8 +8,8 @@ read -e -p "Press Enter to confirm: " -i "vagrant" USER_NAME
 green "update all #########################################################" 
 apt-get -y update
 c
-#apt-get -y upgrade
-
+apt-get -y upgrade
+c
 
 
 green "#######################################################"
@@ -48,8 +48,6 @@ npm install -g http-server
 c
 
 
-
-
 green "copy vim files"
 cp -rf home-files/. ~/.
 c
@@ -83,6 +81,10 @@ c
 # apt-get -y install make
 # apt-get -y install linux-source-3.13.0
 
+
+
+source install-oracle-java8.sh
+source install-ipython.sh
 
 chown -R $USER_NAME:$USER_NAME ~/.*
 с
