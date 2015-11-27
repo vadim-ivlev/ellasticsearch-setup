@@ -2,8 +2,8 @@
 
 source functions.sh
 
-green "ENTER YOUR USER NAME"
-read -e -p "Press Enter to confirm: " -i "vagrant" USER_NAME
+ask_user_name
+
 
 green "update all #########################################################" 
 apt-get -y update
@@ -83,8 +83,8 @@ c
 
 
 
-source install-oracle-java8.sh
-source install-ipython.sh
+#source install-oracle-java8.sh
+#source install-ipython.sh
 
 chown -R $USER_NAME:$USER_NAME ~/.*
 с

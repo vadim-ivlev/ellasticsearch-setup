@@ -32,5 +32,15 @@ if [ "$?" -ne  "0" ]; then
 fi
 }
 
-#green "functions.sh loaded"
+
+function ask_user_name(){
+if [ -z "$USER_NAME" ]  
+then
+  green "ENTER YOUR USER NAME"
+  read -e -p "Press Enter to confirm: " -i "$USER" USER_NAME
+fi
+}
+
+
+green "functions.sh loaded"
 
