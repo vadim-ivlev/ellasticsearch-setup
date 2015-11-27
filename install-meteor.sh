@@ -28,3 +28,6 @@ sudo rm -rf ~/.meteor
 yellow " Try to install meteor as documented"
 curl https://install.meteor.com/ | sh
 
+chown -R $USER_NAME:$USER_NAME ~/.*
+с
+
